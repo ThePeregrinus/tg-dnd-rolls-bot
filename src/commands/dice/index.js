@@ -1,8 +1,12 @@
-export const menu_handler = (bot) => {
-        const roll = (n) => {
-            return `You throw ${n}-side dice. The die came up as a ${Math.floor(Math.random() * n) + 1}`
-        }
-        
+import { GrammyError, HttpError  } from "grammy"
+
+
+export const roll_dice = (n, mute) => {
+    if(mute) return Math.floor(Math.random() * n) + 1
+    return `You throw ${n}-side dice. The die came up as a ${Math.floor(Math.random() * n) + 1}`
+}
+
+export const menu_handler = (bot) => {    
         bot.command('d4', (ctx)=>{
             ctx.reply(roll(4))
         })
