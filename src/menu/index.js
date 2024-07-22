@@ -1,6 +1,7 @@
 export const init_menu = (bot) => {
     try {
         bot.api.setMyCommands([
+            { command:"roll", description: '/roll d4 2d6 8d12 11d20'},
             { command: "start", description: "Start bot" },
             { command: "help", description: "Get instuctions" },
             { command: "d4", description: "Roll a D4 dice" },

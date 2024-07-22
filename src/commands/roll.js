@@ -7,7 +7,7 @@ export const roll = (ctx) =>{
     else{
         let items = params.split(' ');
         const pairs = new Map([['d4', 0], ['d6', 0], ['d8', 0], ['d10', 0], ['d12', 0], ['d20', 0]])
-        items = items.map(item=>{
+        items.forEach(item=>{
             const ind = item.indexOf('d')
             const dice = item.slice(ind)
             let num = Number(item.slice(0, ind))
